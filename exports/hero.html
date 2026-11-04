@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/fraunces-var.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Fraunces';
+    src: url('../assets/fonts/fraunces-italic-var.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Archivo';
+    src: url('../assets/fonts/archivo-var.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 2400px; height: 1600px; overflow: hidden; }
+  body {
+    font-family: 'Archivo', sans-serif;
+    color: #241b14;
+    background: #d5c1a5;
+  }
+  .page {
+    position: relative;
+    width: 2400px;
+    height: 1600px;
+    padding: 64px 82px 44px;
+    background-image:
+      linear-gradient(112deg, rgba(255, 248, 235, .26), rgba(68, 43, 20, .14)),
+      url('../assets/img/wood.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .frame {
+    position: absolute;
+    inset: 32px;
+    border: 1px solid rgba(255, 248, 235, .54);
+    pointer-events: none;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .brand { display: flex; align-items: center; gap: 20px; }
+  .brand img { width: 120px; height: auto; }
+  .brand-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+    font-variation-settings: 'opsz' 60, 'wght' 600;
+  }
+  .brand-sub {
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .3em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #8a5d22;
+  }
+  .header-meta {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .24em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: rgba(42, 27, 15, .64);
+    text-align: right;
+  }
+  .main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 560px minmax(0, 1fr);
+    align-items: center;
+    gap: 56px;
+    padding-top: 8px;
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: #8a5d22;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 34px;
+    height: 1px;
+    background: #8a5d22;
+  }
+  h1 {
+    margin: 28px 0 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 172px;
+    line-height: .78;
+    letter-spacing: -.045em;
+    font-variation-settings: 'opsz' 144, 'wght' 600;
+  }
+  h1 em {
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -.03em;
+  }
+  .edition {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 32px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .3em;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #8a5d22;
+  }
+  .edition::before {
+    content: '';
+    width: 42px;
+    height: 1px;
+    background: #8a5d22;
+  }
+  .copy {
+    max-width: 428px;
+    margin: 30px 0 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(42, 27, 15, .76);
+  }
+  .stage-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(42, 27, 15, .22);
+    max-width: 430px;
+  }
+  .stage-meta div { display: flex; flex-direction: column; gap: 5px; }
+  .stage-meta strong {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .stage-meta span {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(42, 27, 15, .58);
+  }
+  .shirts {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 34px;
+    min-width: 0;
+  }
+  figure {
+    margin: 0;
+    width: 735px;
+    max-width: 48%;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 38px 28px rgba(43, 24, 8, .35));
+  }
+  figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(42, 27, 15, .24);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: rgba(42, 27, 15, .64);
+  }
+  figcaption b {
+    font-weight: 600;
+    color: #8a5d22;
+  }
+  figcaption span + span {
+    padding-left: 18px;
+    border-left: 1px solid rgba(42, 27, 15, .22);
+  }
+  footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(42, 27, 15, .24);
+  }
+  .swatches { display: flex; align-items: center; gap: 14px; }
+  .swatch {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid rgba(42, 27, 15, .25);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .35), 0 2px 3px rgba(50, 30, 12, .14);
+  }
+  .footer-note {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: rgba(42, 27, 15, .56);
+    text-align: right;
+  }
+  .footer-note b { color: #241b14; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="frame"></div>
+  <header>
+    <div class="brand">
+      <img src="../assets/img/mark.svg" alt="">
+      <div>
+        <div class="brand-name">Meto Dwom</div>
+        <div class="brand-sub">2nd Edition</div>
+      </div>
+    </div>
+    <div class="header-meta">Apparel study — 002<br>Front &amp; back · three colourways</div>
+  </header>
+
+  <div class="main">
+    <div>
+      <p class="eyebrow">Apparel concept — 002</p>
+      <h1>Meto <em>Dwom</em></h1>
+      <div class="edition">Second Edition</div>
+      <p class="copy">A hymnbook in cloth. The alto clef and whole note mark the left chest; the wordmark carries the back.</p>
+      <div class="stage-meta">
+        <div><strong>03</strong><span>Colourways</span></div>
+        <div><strong>02</strong><span>Placements</span></div>
+        <div><strong>300</strong><span>DPI artwork</span></div>
+      </div>
+    </div>
+
+    <div class="shirts">
+      <figure>
+        <img src="../assets/img/tees/white-front.webp" alt="White front">
+        <figcaption><span><b>01</b> &nbsp; Front</span><span>Left chest</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/tees/white-back.webp" alt="White back">
+        <figcaption><span><b>02</b> &nbsp; Back</span><span>Wordmark</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <footer>
+    <div class="swatches">
+      <span class="swatch" style="background:#F1EADF"></span>
+      <span class="swatch" style="background:#3B4A39"></span>
+      <span class="swatch" style="background:#2A3650"></span>
+    </div>
+    <div class="footer-note"><b>White / espresso</b><br>Mockup preview — not to scale · print artwork supplied at 300 DPI</div>
+  </footer>
+</div>
+</body>
+</html>
