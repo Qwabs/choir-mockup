@@ -398,6 +398,47 @@ button { font: inherit; color: inherit; }
 
 .stage-meta { text-align: right; }
 
+.stage-view {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 12px auto 0;
+  padding: 3px;
+  border: 1px solid rgba(42, 27, 15, .22);
+  border-radius: 2px;
+  background: rgba(255, 248, 235, .28);
+}
+
+.view-btn {
+  appearance: none;
+  min-width: 84px;
+  height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 1px;
+  background: transparent;
+  color: rgba(42, 27, 15, .7);
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.view-btn.is-active {
+  background: rgba(36, 27, 20, .9);
+  color: var(--paper);
+}
+
+.view-btn:focus-visible {
+  outline: 1px solid rgba(36, 27, 20, .8);
+  outline-offset: 2px;
+}
+
 .shirt-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1224,34 +1265,98 @@ button { font: inherit; color: inherit; }
 @media (max-width: 700px) {
   .container { width: calc(100% - 36px); }
 
-  .header-inner { min-height: 74px; gap: 16px; }
+  .header-inner { min-height: 64px; gap: 16px; }
+  .brand { min-height: 44px; }
   .brand-mark { width: 48px; }
   .brand-name { font-size: 13px; }
   .header-nav a:not(.nav-cta) { display: none; }
-  .header-nav .nav-cta { font-size: 8px; }
+  .header-nav .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 2px;
+    font-size: 8px;
+  }
   .header-nav .nav-cta::before { margin-right: 5px; }
 
-  .hero-title h1 { font-size: clamp(3.75rem, 15vw, 5.6rem); }
-  .edition-line { margin-top: 22px; font-size: 8px; }
+  .hero { padding-top: 30px; }
+  .hero-layout { display: flex; flex-direction: column; }
+  .hero-head { display: contents; }
+  .hero-title { order: 1; }
+  .stage-shell { order: 2; margin-top: 24px; }
+  .hero-aside { order: 3; max-width: none; padding-top: 30px; padding-bottom: 0; }
+  .hero-title h1 { margin-top: 20px; font-size: clamp(3.75rem, 15vw, 5.6rem); }
+  .edition-line { margin-top: 18px; font-size: 8px; }
   .lede { font-size: 15px; }
+  .stats { max-width: none; margin-top: 24px; padding-top: 16px; }
 
-  .stage { padding: 16px 14px 15px; }
-  .stage-head { font-size: 7.5px; letter-spacing: .14em; gap: 10px; }
+  .stage { padding: 16px 14px 14px; }
+  .stage-head {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 8px;
+    letter-spacing: .14em;
+  }
+  .stage-meta { display: block; white-space: nowrap; }
   .stage-head .dot { margin: 0 4px 2px; }
   .shirt-pair { gap: 10px; margin-top: 2px; }
   .shirt-wrap { filter: drop-shadow(0 18px 15px rgba(43, 24, 8, .3)); }
   .shirt-figure figcaption {
     gap: 5px;
-    margin-top: 9px;
-    font-size: 6.5px;
-    letter-spacing: .14em;
+    margin-top: 10px;
+    font-size: 8px;
+    letter-spacing: .15em;
   }
   .fig-detail { display: none; }
-  .stage-foot { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 14px; }
-  .swatches { gap: 9px; }
-  .swatch { width: 24px; height: 24px; }
-  .stage-hint { text-align: left; font-size: 7.5px; }
-  .stage-caption { font-size: 7px; gap: 10px; }
+  .stage-foot { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 12px; }
+  .swatches { gap: 2px; }
+
+  /* 44px hit area; the visible swatch stays a small dot */
+  .swatch {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .swatch::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(34, 22, 12, .28);
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, .38),
+      inset 0 -3px 5px rgba(0, 0, 0, .13),
+      0 2px 3px rgba(50, 30, 12, .14);
+    transition: transform .2s var(--ease), box-shadow .2s ease;
+  }
+  .swatch::after {
+    right: 9px;
+    bottom: 9px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(255, 248, 235, .75);
+  }
+  .swatch:hover { transform: none; }
+  .swatch:hover::before { transform: scale(1.06); }
+  .swatch.is-active { transform: none; box-shadow: none; }
+  .swatch.is-active::before {
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, .38),
+      inset 0 -3px 5px rgba(0, 0, 0, .13),
+      0 0 0 2px rgba(255, 248, 235, .75),
+      0 0 0 3px rgba(38, 24, 13, .55);
+  }
+  .swatch:focus-visible { outline: none; }
+  .swatch:focus-visible::before {
+    outline: 1px solid var(--paper);
+    outline-offset: 4px;
+  }
+
+  .stage-hint { text-align: left; font-size: 8px; }
+  .stage-caption { font-size: 7.5px; gap: 10px; }
 
   .marquee { height: 50px; margin-top: 68px; }
   .marquee span { font-size: 18px; padding: 0 22px; }
@@ -1276,11 +1381,45 @@ button { font: inherit; color: inherit; }
   .btn { min-height: 46px; }
 
   .footer-inner { align-items: flex-start; }
-  .to-top { margin-left: auto; }
+  .footer-brand { min-height: 44px; }
+  .footer-note a { display: inline-block; padding: 9px 0; }
+  .to-top { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 0; margin-left: auto; }
+}
+
+/* One-shirt mobile stage */
+@media (max-width: 600px) {
+  .stage-view { display: flex; }
+  .stage-label-prefix { display: none; }
+  .shirt-pair {
+    display: block;
+    max-width: none;
+    margin-top: 0;
+    padding: 12px 0 0;
+  }
+  .shirt-figure { display: none; }
+  .shirt-pair[data-view="front"] .shirt-figure[data-view="front"],
+  .shirt-pair[data-view="back"] .shirt-figure[data-view="back"] {
+    display: block;
+  }
+  .shirt-wrap { max-width: 340px; margin-inline: auto; }
+  .shirt-figure figcaption {
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 8.5px;
+    letter-spacing: .16em;
+  }
+  .fig-detail { display: inline; }
+  .stage-foot {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding-top: 10px;
+  }
+  .stage-hint { display: none; }
+  .stage-caption span:last-child { display: none; }
 }
 
 @media (max-width: 390px) {
-  .swatch { width: 22px; height: 22px; }
-  .swatches { gap: 8px; }
-  .stage-head .stage-meta { display: none; }
+  .stage { padding-inline: 12px; }
 }

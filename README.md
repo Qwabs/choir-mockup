@@ -14,7 +14,7 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000/`. A direct file open works too; the fonts, images and scripts are all local.
 
-Use the swatches in the stage or select a colour card to change the featured colourway. Append `?colour=green` or `?colour=blue` to the URL to load a specific colour directly.
+Use the swatches in the stage or select a colour card to change the featured colourway. On phones, use the Front/Back control in the stage to switch views. Append `?colour=green` or `?colour=blue` to the URL to load a specific colour directly.
 
 ## What's inside
 

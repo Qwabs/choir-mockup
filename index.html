@@ -48,7 +48,8 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-head">
+      <div class="container hero-layout">
+        <div class="hero-head">
         <div class="hero-title">
           <p class="eyebrow">Apparel concept — 002</p>
           <h1 id="hero-title">Meto <em>Dwom</em></h1>
@@ -64,36 +65,42 @@
         </div>
       </div>
 
-      <div class="container stage-shell">
-        <div class="stage" id="stage">
-          <div class="stage-head">
-            <span class="stage-label">Front &amp; back<span class="dot"></span>Live mockup</span>
-            <span class="stage-meta" id="stage-meta">White — Espresso</span>
-          </div>
+        <div class="stage-shell">
+          <div class="stage" id="stage">
+            <div class="stage-head">
+              <span class="stage-label"><span class="stage-label-prefix">Front &amp; back<span class="dot"></span></span>Live mockup</span>
+              <span class="stage-meta" id="stage-meta">White — Espresso</span>
+            </div>
 
-          <div class="shirt-pair">
-            <figure class="shirt-figure">
-              <div class="shirt-wrap">
-                <img id="hero-front" src="assets/img/tees/white-front.webp" width="966" height="1088" alt="White T-shirt, front view, with the Meto Dwom staff mark on the left chest" fetchpriority="high">
-              </div>
-              <figcaption><span class="fig-num">01</span> <span>Front</span> <span class="fig-detail">· Left chest</span></figcaption>
-            </figure>
-            <figure class="shirt-figure">
-              <div class="shirt-wrap">
-                <img id="hero-back" src="assets/img/tees/white-back.webp" width="950" height="1088" alt="White T-shirt, back view, with the Meto Dwom 2nd Edition wordmark" fetchpriority="high">
-              </div>
-              <figcaption><span class="fig-num">02</span> <span>Back</span> <span class="fig-detail">· Wordmark</span></figcaption>
-            </figure>
-          </div>
+            <div class="stage-view" role="group" aria-label="Choose shirt view">
+              <button type="button" class="view-btn is-active" data-view="front" aria-pressed="true">Front</button>
+              <button type="button" class="view-btn" data-view="back" aria-pressed="false">Back</button>
+            </div>
 
-          <div class="stage-foot">
-            <div class="swatches" id="swatches" role="group" aria-label="Choose a shirt colour"></div>
-            <div class="stage-hint"><strong>3 colourways</strong> · select a swatch</div>
+            <div class="shirt-pair" data-view="front">
+              <figure class="shirt-figure" data-view="front">
+                <div class="shirt-wrap">
+                  <img id="hero-front" src="assets/img/tees/white-front.webp" width="966" height="1088" alt="White T-shirt, front view, with the Meto Dwom staff mark on the left chest" fetchpriority="high">
+                </div>
+                <figcaption><span class="fig-num">01</span> <span>Front</span> <span class="fig-detail">· Left chest</span></figcaption>
+              </figure>
+              <figure class="shirt-figure" data-view="back">
+                <div class="shirt-wrap">
+                  <img id="hero-back" src="assets/img/tees/white-back.webp" width="950" height="1088" alt="White T-shirt, back view, with the Meto Dwom 2nd Edition wordmark" fetchpriority="high">
+                </div>
+                <figcaption><span class="fig-num">02</span> <span>Back</span> <span class="fig-detail">· Wordmark</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="stage-foot">
+              <div class="swatches" id="swatches" role="group" aria-label="Choose a shirt colour"></div>
+              <div class="stage-hint"><strong>3 colourways</strong> · select a swatch</div>
+            </div>
           </div>
-        </div>
-        <div class="stage-caption">
-          <span>Mockup preview — not to scale</span>
-          <span>Print artwork: 300 DPI · solid spot colour</span>
+          <div class="stage-caption">
+            <span>Mockup preview — not to scale</span>
+            <span>Print artwork: 300 DPI · solid spot colour</span>
+          </div>
         </div>
       </div>
     </section>

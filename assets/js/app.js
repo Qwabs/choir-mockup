@@ -11,6 +11,8 @@
   var heroBack = document.getElementById('hero-back');
   var stageMeta = document.getElementById('stage-meta');
   var stage = document.getElementById('stage');
+  var shirtPair = document.querySelector('.shirt-pair');
+  var viewButtons = Array.prototype.slice.call(document.querySelectorAll('.view-btn'));
   var swatchWrap = document.getElementById('swatches');
   var grid = document.getElementById('colour-grid');
   var current = 'white';
@@ -121,6 +123,25 @@
     }
   }
 
+  function setView(view) {
+    if (!shirtPair) return;
+    if (view !== 'front' && view !== 'back') return;
+    shirtPair.dataset.view = view;
+    viewButtons.forEach(function (button) {
+      var active = button.dataset.view === view;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  function bindViewToggle() {
+    viewButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        setView(button.dataset.view);
+      });
+    });
+  }
+
   function preload() {
     COLORS.forEach(function (color) {
       ['front', 'back'].forEach(function (view) {
@@ -133,6 +154,8 @@
   function init() {
     if (!heroFront || !heroBack || !stageMeta || !swatchWrap || !grid) return;
     stageMeta.setAttribute('aria-live', 'polite');
+    bindViewToggle();
+    setView(shirtPair && shirtPair.dataset.view === 'back' ? 'back' : 'front');
     makeSwatches();
     makeGrid();
 
