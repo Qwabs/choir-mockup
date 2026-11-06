@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Meto Dwom 2nd Edition — Apparel Mockup</title>
-  <meta name="description" content="Apparel mockup for Meto Dwom 2nd Edition. Alto clef chest mark and back wordmark across three garment colourways, with print-ready artwork.">
+  <meta name="description" content="Apparel mockup for Meto Dwom 2nd Edition. Alto clef chest mark and two treble-clef back studies across three garment colourways, with print-ready artwork.">
   <meta name="theme-color" content="#f3ede1">
   <link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.ico">
@@ -39,6 +39,7 @@
       </a>
       <nav class="header-nav" aria-label="Page sections">
         <a href="#design">The design</a>
+        <a href="#back-studies">Back studies</a>
         <a href="#colourways">Colourways</a>
         <a href="#print">Print specs</a>
         <a class="nav-cta" href="print/meto-dwom-print-pack.zip" download>Print pack</a>
@@ -56,7 +57,7 @@
           <p class="edition-line">Second Edition <span>·</span> Front &amp; back</p>
         </div>
         <div class="hero-aside">
-          <p class="lede">A hymnbook in cloth. The alto clef and whole note mark the left chest; the wordmark carries the back. Three garment-dyed colourways, built as one-colour prints.</p>
+          <p class="lede">A hymnbook in cloth. The alto clef and whole note mark the left chest; the treble clef and wordmark carry the back. Three garment-dyed colourways, built as one-colour prints.</p>
           <dl class="stats">
             <div><dt>03</dt><dd>colourways</dd></div>
             <div><dt>02</dt><dd>placements</dd></div>
@@ -66,7 +67,7 @@
       </div>
 
         <div class="stage-shell">
-          <div class="stage" id="stage">
+          <div class="stage" id="stage" data-view="front">
             <div class="stage-head">
               <span class="stage-label"><span class="stage-label-prefix">Front &amp; back<span class="dot"></span></span>Live mockup</span>
               <span class="stage-meta" id="stage-meta">White — Espresso</span>
@@ -75,6 +76,12 @@
             <div class="stage-view" role="group" aria-label="Choose shirt view">
               <button type="button" class="view-btn is-active" data-view="front" aria-pressed="true">Front</button>
               <button type="button" class="view-btn" data-view="back" aria-pressed="false">Back</button>
+            </div>
+
+            <div class="stage-back-style" role="group" aria-label="Choose back note position">
+              <span class="back-style-label">Back note</span>
+              <button type="button" class="back-btn is-active" data-back="above" aria-pressed="true">Above</button>
+              <button type="button" class="back-btn" data-back="below" aria-pressed="false">Below</button>
             </div>
 
             <div class="shirt-pair" data-view="front">
@@ -86,9 +93,9 @@
               </figure>
               <figure class="shirt-figure" data-view="back">
                 <div class="shirt-wrap">
-                  <img id="hero-back" src="assets/img/tees/white-back.webp" width="950" height="1088" alt="White T-shirt, back view, with the Meto Dwom 2nd Edition wordmark" fetchpriority="high">
+                  <img id="hero-back" src="assets/img/tees/white-back-above.webp" width="950" height="1088" alt="White T-shirt, back view, with the treble clef above the Meto Dwom wordmark" fetchpriority="high">
                 </div>
-                <figcaption><span class="fig-num">02</span> <span>Back</span> <span class="fig-detail">· Wordmark</span></figcaption>
+                <figcaption><span class="fig-num">02</span> <span>Back</span> <span class="fig-detail" id="hero-back-caption">· Note above</span></figcaption>
               </figure>
             </div>
 
@@ -125,7 +132,7 @@
         <div class="design-grid">
           <div class="design-copy">
             <p>Redrawn as a crisp single-colour vector, it holds at chest scale and on a printed spec sheet. Five lines, a barline, the clef, the note. Nothing more than the score needs.</p>
-            <p>On the front it sits alone above the left breast. The back is text only: METO DWOM, with the edition line tracked beneath. The restraint is the point: one ink, one mark, a garment that can carry the name quietly.</p>
+            <p>On the front it sits alone above the left breast. The back pairs the supplied treble clef with the wordmark, in two studies: note above and note below. The restraint is the point: one ink, one language, a garment that can carry the name quietly.</p>
             <blockquote class="pullquote">A small excerpt of music, set in cloth.</blockquote>
           </div>
 
@@ -139,9 +146,9 @@
                 </figcaption>
               </figure>
               <figure class="detail-card">
-                <img src="assets/img/detail-back.webp" width="450" height="338" alt="Close-up of the Meto Dwom back wordmark on the white shirt" loading="lazy">
+                <img src="assets/img/detail-back.webp" width="450" height="338" alt="Close-up of the note-above back study on the white shirt" loading="lazy">
                 <figcaption class="detail-meta">
-                  <h3>Upper back</h3>
+                  <h3>Back study</h3>
                   <span>8.6 in wide</span>
                 </figcaption>
               </figure>
@@ -157,12 +164,59 @@
           </div>
           <div class="note">
             <h3><span>02</span> The type</h3>
-            <p>METO DWOM is set in Fraunces; 2ND EDITION is tracked in Archivo. A quiet pairing with enough weight for a screen print.</p>
+            <p>METO DWOM is set in Fraunces; the 2nd Edition line is tracked in Archivo across the presentation. A quiet pairing with enough weight for a screen print.</p>
           </div>
           <div class="note">
             <h3><span>03</span> The placement</h3>
-            <p>Chest mark only on the front — no centre print. The back is the wordmark and edition line only. Placement measurements are in the print pack.</p>
+            <p>Chest mark only on the front — no centre print. The back pairs the treble clef with the wordmark in two studies. Placement measurements are in the print pack.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="back-studies" id="back-studies" aria-labelledby="back-studies-title">
+      <div class="container">
+        <div class="studies-head">
+          <div>
+            <p class="kicker">02 / Back studies</p>
+            <h2 class="section-title" id="back-studies-title">Two ways<br>to <em>sign it.</em></h2>
+          </div>
+          <p class="section-intro">The supplied treble clef sits above or below the METO DWOM wordmark. Compare both on White, Green or Blue — the front stays as it is.</p>
+        </div>
+
+        <div class="studies-grid">
+          <figure class="study-card">
+            <div class="study-image">
+              <img class="study-img" data-study="above" src="assets/img/tees/white-back-above.webp" width="950" height="1088" alt="White shirt, back, with the treble clef above the Meto Dwom wordmark" loading="lazy">
+            </div>
+            <figcaption>
+              <span class="study-index">A</span>
+              <div>
+                <h3>Note above</h3>
+                <p>Treble clef above the wordmark.</p>
+              </div>
+              <span class="study-size">8.6 × 4.0 in</span>
+            </figcaption>
+          </figure>
+
+          <figure class="study-card">
+            <div class="study-image">
+              <img class="study-img" data-study="below" src="assets/img/tees/white-back-below.webp" width="950" height="1088" alt="White shirt, back, with the treble clef below the Meto Dwom wordmark" loading="lazy">
+            </div>
+            <figcaption>
+              <span class="study-index">B</span>
+              <div>
+                <h3>Note below</h3>
+                <p>Treble clef below the wordmark.</p>
+              </div>
+              <span class="study-size">8.6 × 4.0 in</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="study-controls">
+          <div class="swatches study-swatches" id="study-swatches" role="group" aria-label="Choose a colour for the back studies"></div>
+          <p class="study-selected" id="study-colour">White — Espresso</p>
         </div>
       </div>
     </section>
@@ -171,7 +225,7 @@
       <div class="container">
         <div class="colour-head">
           <div>
-            <p class="kicker">02 / Colourways</p>
+            <p class="kicker">03 / Colourways</p>
             <h2 class="section-title" id="colour-title">Three ways<br>to <em>sing it.</em></h2>
           </div>
           <p class="section-intro">Espresso on white, warm ecru on green, antique gold on blue. Select any colourway to bring it into the stage.</p>
@@ -184,9 +238,9 @@
       <svg class="print-watermark" viewBox="0 0 600 296" aria-hidden="true"><use href="#staff-mark"/></svg>
       <div class="container">
         <div class="print-head">
-          <p class="kicker">03 / Print ready</p>
+          <p class="kicker">04 / Print ready</p>
           <h2 class="section-title" id="print-title">Ready for<br>the <em>press.</em></h2>
-          <p class="section-intro">Separate chest and back files, prepared as one-colour spot artwork. Transparent 300 DPI PNGs for the print floor and editable SVG for anything else.</p>
+          <p class="section-intro">Chest plus two back files, prepared as one-colour spot artwork. Transparent 300 DPI PNGs for the print floor and editable SVG for anything else.</p>
         </div>
 
         <div class="print-grid">
@@ -197,8 +251,12 @@
                 <dd><em>3.25 × 1.3 in</em><br>Wearer's left · 3.25 in from centre · 7 in below shoulder seam</dd>
               </div>
               <div class="spec-row">
-                <dt>Back wordmark</dt>
-                <dd><em>8.6 × 1.7 in</em><br>Centred · 3.25 in below collar seam</dd>
+                <dt>Back — note above</dt>
+                <dd><em>8.6 × 4.0 in</em><br>Clef above wordmark · centred · 3 in below collar seam</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Back — note below</dt>
+                <dd><em>8.6 × 4.0 in</em><br>Clef below wordmark · centred · 3 in below collar seam</dd>
               </div>
               <div class="spec-row">
                 <dt>Artwork</dt>
@@ -218,17 +276,17 @@
 
           <div class="print-card">
             <div class="print-art">
-              <img src="print/meto-dwom-back-gold.png" width="2700" height="626" alt="Gold Meto Dwom 2nd Edition back wordmark artwork on a dark panel" loading="lazy">
+              <img src="print/meto-dwom-back-above-gold.png" width="2700" height="1324" alt="Gold Meto Dwom back study with the treble clef above the wordmark" loading="lazy">
             </div>
             <div class="print-art-label">
-              <span>Back wordmark / antique gold</span>
+              <span>Note above / antique gold</span>
               <span>SVG + 300 DPI</span>
             </div>
             <div class="print-actions">
               <a class="btn" href="print/meto-dwom-print-pack.zip" download>Download print pack</a>
               <a class="btn btn-ghost" href="print/README.md" target="_blank" rel="noopener">Read print notes</a>
             </div>
-            <p class="file-note">meto-dwom-print-pack.zip · 9 files · 3 inks · chest + back</p>
+            <p class="file-note">meto-dwom-print-pack.zip · 13 files · 3 inks · chest + two backs</p>
           </div>
         </div>
       </div>
@@ -241,7 +299,7 @@
         <svg class="brand-mark" viewBox="0 0 600 296" aria-hidden="true"><use href="#staff-mark"/></svg>
         <span>Meto Dwom<br>2nd Edition</span>
       </a>
-      <p class="footer-note">Apparel mockup prepared for print approval. Colours on screen may vary slightly from the printed garment and ink.<br><a href="exports/meto-dwom-hero-white.png">Hero image</a> · <a href="exports/meto-dwom-colourways.png">Colourway sheet</a></p>
+      <p class="footer-note">Apparel mockup prepared for print approval. Colours on screen may vary slightly from the printed garment and ink.<br><a href="exports/meto-dwom-hero-white.png">Hero image</a> · <a href="exports/meto-dwom-colourways.png">Colourway sheet</a> · <a href="exports/meto-dwom-back-studies.png">Back studies</a></p>
       <a class="to-top" href="#top">Back to top ↑</a>
     </div>
   </footer>

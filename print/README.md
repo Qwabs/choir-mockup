@@ -1,15 +1,16 @@
 # Meto Dwom 2nd Edition — print notes
 
-One-colour spot artwork for the Meto Dwom 2nd Edition apparel range. The chest mark and back wordmark are supplied as separate files so each placement can be set independently.
+One-colour spot artwork for the Meto Dwom 2nd Edition apparel range. The chest mark is supplied alongside two back options: the treble clef above or below the METO DWOM wordmark. The **2ND EDITION** line is intentionally removed from the back.
 
 ## Artwork sizes
 
 | Placement | Actual print | Artboard / file |
 |---|---|---|
 | Left chest mark | 3.25 in wide × 1.30 in high | PNG 3.5 × 2.0 in (1050 × 600 px); SVG 3.53 × 1.74 in |
-| Back wordmark | 8.6 in wide × 1.71 in high | PNG 9.0 × 2.09 in (2700 × 626 px); SVG 8.84 × 2.05 in |
+| Back — note above | 8.6 in wide × 4.0 in high | PNG 9.0 × 4.41 in (2700 × 1324 px); SVG 8.84 × 4.33 in |
+| Back — note below | 8.6 in wide × 4.0 in high | PNG 9.0 × 4.41 in (2700 × 1324 px); SVG 8.84 × 4.33 in |
 
-All PNGs are transparent, 300 DPI, and supplied as flat solid colour. The SVGs use outlined text and a single fill that can be changed to any spot colour.
+All PNGs are transparent, 300 DPI, and supplied as flat solid colour. The SVGs use outlined text, a vector clef, and a single fill that can be changed to any spot colour.
 
 ## Placement
 
@@ -18,10 +19,12 @@ All PNGs are transparent, 300 DPI, and supplied as flat solid colour. The SVGs u
 - Centre of the mark 3.25 in from the garment centre line.
 - 7 in below the high point shoulder / shoulder seam.
 
-**Back wordmark**
-- Centred on the back panel.
-- Top of the wordmark 3.25 in below the collar seam.
-- The back is text only: METO DWOM with the 2ND EDITION line beneath. No staff mark.
+**Back studies**
+- Both options are centred on the back panel.
+- Top of the print block 3 in below the collar seam.
+- Note above: treble clef above **METO DWOM**.
+- Note below: **METO DWOM** above the treble clef.
+- No edition text on the back.
 
 ## Inks
 
@@ -47,11 +50,13 @@ Suggested blank: heavyweight garment-dyed cotton tee — Comfort Colors 1717 or 
 ## Files
 
 - `meto-dwom-mark.svg` — chest mark, black vector
-- `meto-dwom-back.svg` — back wordmark, black vector (text outlined)
+- `meto-dwom-back-above.svg` — treble clef above wordmark, black vector (text outlined)
+- `meto-dwom-back-below.svg` — wordmark above treble clef, black vector (text outlined)
 - `meto-dwom-chest-gold.png`, `-ecru.png`, `-espresso.png`
-- `meto-dwom-back-gold.png`, `-ecru.png`, `-espresso.png`
+- `meto-dwom-back-above-gold.png`, `-ecru.png`, `-espresso.png`
+- `meto-dwom-back-below-gold.png`, `-ecru.png`, `-espresso.png`
 - `README.md` — this sheet
 
-## Type
+## Type and clef
 
-METO DWOM is set in Fraunces; 2ND EDITION is set in Archivo. Both are licensed under the SIL Open Font License. Text in the back vector has been converted to outlines.
+METO DWOM is set in Fraunces; the clef is vectorised from the supplied artwork. Both typefaces are licensed under the SIL Open Font License.
