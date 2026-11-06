@@ -8,7 +8,7 @@ One-colour spot artwork for the Meto Dwom 2nd Edition apparel range. The chest m
 |---|---|---|
 | Left chest mark | 3.25 in wide × 1.30 in high | PNG 3.5 × 2.0 in (1050 × 600 px); SVG 3.53 × 1.74 in |
 | Back — note above | 8.6 in wide × 4.0 in high | PNG 9.0 × 4.41 in (2700 × 1324 px); SVG 8.84 × 4.33 in |
-| Back — note below | 8.6 in wide × 4.0 in high | PNG 9.0 × 4.41 in (2700 × 1324 px); SVG 8.84 × 4.33 in |
+| Back — note below | 8.6 in wide × 4.37 in high | PNG 9.0 × 4.77 in (2700 × 1430 px); SVG 8.84 × 4.68 in |
 
 All PNGs are transparent, 300 DPI, and supplied as flat solid colour. The SVGs use outlined text, a vector clef, and a single fill that can be changed to any spot colour.
 
@@ -24,7 +24,7 @@ All PNGs are transparent, 300 DPI, and supplied as flat solid colour. The SVGs u
 - Top of the print block 3 in below the collar seam.
 - Note above: treble clef above **METO DWOM**.
 - Note below: **METO DWOM** above the treble clef.
-- No edition text on the back.
+- Wordmark top 2.65 in below the collar seam; the clef stays at the same height. No edition text on the back.
 
 ## Inks
 

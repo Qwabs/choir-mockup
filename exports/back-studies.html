@@ -200,7 +200,7 @@
     <div class="swatches">
       <i style="background:#F1EADF"></i><i style="background:#3B4A39"></i><i style="background:#2A3650"></i>
     </div>
-    <div><b>Meto Dwom 2nd Edition</b> · back studies · 8.6 × 4.0 in · 300 DPI artwork</div>
+    <div><b>Meto Dwom 2nd Edition</b> · back studies · 8.6 × 4.0–4.4 in · 300 DPI artwork</div>
   </footer>
 </div>
 <script>
@@ -226,7 +226,7 @@
         '<div class="card-top"><span class="layout">' + layout.name + '</span><span class="color">' + c.name + '</span><span class="num">0' + n + '</span></div>' +
         '<div class="ink"><i></i>' + c.ink + '</div>' +
         '<div class="image"><img src="../assets/img/tees/' + c.id + '-back-' + layout.id + '.webp" alt=""></div>' +
-        '<div class="cap"><span>Back study <b>' + layout.code + '</b></span><span>8.6 × 4.0 in · ' + c.name.toLowerCase() + '</span></div>';
+        '<div class="cap"><span>Back study <b>' + layout.code + '</b></span><span>' + (layout.id === 'below' ? '8.6 × 4.4 in' : '8.6 × 4.0 in') + ' · ' + c.name.toLowerCase() + '</span></div>';
       grid.appendChild(card);
     });
   });

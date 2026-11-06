@@ -55,7 +55,8 @@ exports/
 ## Print sizes
 
 - Chest mark: 3.25 × 1.30 in, 7 in below the shoulder seam, 3.25 in from centre (wearer's left).
-- Back studies: 8.6 × 4.0 in, centred, top of the block 3 in below the collar seam.
+- Back note above: 8.6 × 4.0 in, centred, top 3 in below the collar seam.
+- Back note below: 8.6 × 4.4 in, centred, wordmark top 2.65 in below the collar seam; clef stays in place.
 - Files: transparent 300 DPI PNG and editable SVG. See `print/README.md` for the full printer sheet.
 
 ## Colourways
